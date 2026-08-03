@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#49c9f3"/><stop offset=".63" stop-color="#dff8ff"/><stop offset=".64" stop-color="#b7ecff"/><stop offset="1" stop-color="#71b9e8"/></linearGradient>
+    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4feff"/><stop offset=".5" stop-color="#a9e5ff"/><stop offset="1" stop-color="#4d9dd4"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="9" stdDeviation="2" flood-color="#14283e" flood-opacity=".28"/></filter>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.5" fill="#1977b3" opacity=".18"/></pattern>
+  </defs>
+  <rect width="1080" height="1440" fill="url(#sky)"/>
+  <rect width="1080" height="1440" fill="url(#dots)"/>
+  <!-- comic rays -->
+  <g stroke="#fff" stroke-width="12" opacity=".72"><path d="M40 110 L300 220"/><path d="M1040 120 L790 230"/><path d="M30 540 L240 470"/><path d="M1050 550 L825 475"/></g>
+  <!-- sun -->
+  <g transform="translate(860 210)" stroke="#f59d16" stroke-width="15" stroke-linecap="round"><g><path d="M0-128V-170"/><path d="M90-91l30-30"/><path d="M128 0h42"/><path d="M90 91l30 30"/><path d="M0 128v42"/><path d="M-90 91l-30 30"/><path d="M-128 0h-42"/><path d="M-90-91l-30-30"/></g><circle r="101" fill="#ffd84b"/><path d="M-46 10q46 44 92 0" fill="none"/><circle cx="-36" cy="-22" r="8" fill="#14283e" stroke="none"/><circle cx="36" cy="-22" r="8" fill="#14283e" stroke="none"/></g>
+  <!-- title -->
+  <g filter="url(#shadow)" font-family="Noto Sans TC, sans-serif" text-anchor="middle"><text x="540" y="120" font-size="80" font-weight="900" fill="#fff" stroke="#123e62" stroke-width="12" paint-order="stroke">澳洲冷颼颼的清晨！</text><text x="540" y="188" font-size="35" font-weight="800" fill="#173e63">晴朗不等於不冷：冬季冷夜＋刺骨早晨</text></g>
+  <!-- map card -->
+  <g transform="translate(72 270)" filter="url(#shadow)"><rect width="936" height="590" rx="42" fill="#f9fdff" stroke="#143d62" stroke-width="12"/>
+  <text x="46" y="67" font-family="Noto Sans TC, sans-serif" font-size="35" font-weight="900" fill="#174c7c">週四清晨｜最低溫預報</text>
+  <!-- australia stylized silhouette -->
+  <path d="M225 200 L335 132 L540 123 L704 174 L798 292 L752 425 L636 493 L471 512 L316 470 L207 385 L170 281Z" fill="#91d0a1" stroke="#174c7c" stroke-width="12"/>
+  <!-- cold southeast --> <path d="M522 356 L672 299 L777 317 L749 426 L634 490 L537 477 L482 420Z" fill="url(#ice)" opacity=".96"/>
+  <path d="M548 490 q80 68 156 16 q20 72 73 88 q-120 21-230-44Z" fill="url(#ice)" stroke="#174c7c" stroke-width="8"/>
+  <!-- state guide labels -->
+  <g font-family="Noto Sans TC, sans-serif" font-weight="900" text-anchor="middle"><g><rect x="608" y="310" width="96" height="60" rx="24" fill="#fff" stroke="#174c7c" stroke-width="6"/><text x="656" y="351" font-size="35" fill="#174c7c">5°C</text><text x="720" y="290" font-size="24" fill="#174c7c">布里斯本</text></g><g><rect x="548" y="430" width="106" height="60" rx="24" fill="#d8ccff" stroke="#174c7c" stroke-width="6"/><text x="601" y="471" font-size="35" fill="#412882">-4°C</text></g><text x="387" y="286" font-size="36" fill="#174c7c">陽光普照</text><text x="598" y="410" font-size="32" fill="#174c7c">冰凍南方</text></g>
+  <!-- icy wind --> <g fill="none" stroke="#3a8bc1" stroke-width="15" stroke-linecap="round"><path d="M770 210q70 10 20 55q-45 27 20 45"/><path d="M775 385q78-15 23 43q-44 36 19 48"/></g>
+  </g>
+  <!-- thermometer -->
+  <g transform="translate(110 915)" filter="url(#shadow)"><rect x="0" y="0" width="190" height="370" rx="85" fill="#fff" stroke="#173e63" stroke-width="12"/><rect x="70" y="48" width="50" height="210" rx="25" fill="#e6f8ff" stroke="#173e63" stroke-width="8"/><rect x="70" y="148" width="50" height="110" rx="25" fill="#58b8e6"/><circle cx="95" cy="285" r="58" fill="#58b8e6" stroke="#173e63" stroke-width="10"/></g>
+  <!-- person -->
+  <g transform="translate(360 920)" filter="url(#shadow)" stroke="#173e63" stroke-width="10"><circle cx="150" cy="105" r="72" fill="#ffd1a5"/><path d="M88 87q65-85 134 4l-20 22q-48-32-101 0Z" fill="#5f351d"/><circle cx="127" cy="106" r="7" fill="#173e63"/><circle cx="171" cy="106" r="7" fill="#173e63"/><path d="M128 144q22 16 44 0" fill="none"/><path d="M50 355q25-172 99-172q86 0 112 172Z" fill="#ee7258"/><path d="M58 235q90 50 188 0l15 55q-111 58-217 0Z" fill="#ffd54b"/><path d="M0 260q-68-32-78 38" fill="none"/><path d="M290 260q68-32 78 38" fill="none"/></g>
+  <!-- speech -->
+  <g filter="url(#shadow)"><path d="M642 955q0-45 45-45h300q45 0 45 45v147q0 45-45 45H794l-63 54 18-54h-62q-45 0-45-45Z" fill="#fff" stroke="#173e63" stroke-width="10"/><text x="840" y="1000" font-family="Noto Sans TC, sans-serif" text-anchor="middle" font-size="36" font-weight="900" fill="#173e63">太陽很努力，</text><text x="840" y="1052" font-family="Noto Sans TC, sans-serif" text-anchor="middle" font-size="36" font-weight="900" fill="#173e63">但早上還是冷！</text><text x="840" y="1104" font-family="Noto Sans TC, sans-serif" text-anchor="middle" font-size="30" font-weight="800" fill="#3186ba">記得圍巾＋熱咖啡</text></g>
+  <!-- footer -->
+  <g transform="translate(72 1315)"><rect width="936" height="77" rx="28" fill="#173e63"/><text x="468" y="51" font-family="Noto Sans TC, sans-serif" text-anchor="middle" font-size="30" font-weight="800" fill="#fff">中、東澳洲本週多平靜晴朗｜真正的冬意藏在清晨低溫裡</text></g>
+</svg>
