@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台積電 (2330.TW) AI 股市分析報告</title>
+    <style>
+        :root {
+            --primary-color: #0f2c59;
+            --secondary-color: #1e56a0;
+            --accent-color: #0088cc;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --positive-color: #d97706;
+            --highlight-bg: #f0f7ff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f2c59 0%, #1e56a0 100%);
+            color: #ffffff;
+            padding: 36px 40px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header .meta {
+            font-size: 14px;
+            color: #cbd5e1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 24px 40px;
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metric-card {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .metric-card .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .metric-card .subtext {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-box {
+            background-color: var(--highlight-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+        }
+
+        .summary-box p {
+            margin: 0;
+            font-size: 15px;
+            color: #334155;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background-color: #f8fafc;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .badge-success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-info {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .risk-card {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .risk-card h4 {
+            margin: 0 0 10px 0;
+            color: #c2410c;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background: #f8fafc;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>台積電（2330.TW）AI 股市分析報告</h1>
+        <div class="meta">
+            <div class="meta-item">📅 報告日期：2026 年 8 月 5 日</div>
+            <div class="meta-item">🏢 股票名稱：台灣積體電路製造 (TSMC)</div>
+            <div class="meta-item">🏷️ 股票代號：2330.TW</div>
+        </div>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="label">最新市場價格</div>
+            <div class="value">~2,400 TWD</div>
+            <div class="subtext">今日盤中區間: 2,370 - 2,415 <a href="https://www.tradingview.com/symbols/TWSE-2330/" target="_blank">[TradingView]</a></div>
+        </div>
+        <div class="metric-card">
+            <div class="label">市值規模</div>
+            <div class="value">62.24 兆 TWD</div>
+            <div class="subtext">全球半導體龍頭 <a href="https://www.tradingview.com/symbols/TWSE-2330/" target="_blank">[TradingView]</a></div>
+        </div>
+        <div class="metric-card">
+            <div class="label">52 週高/低</div>
+            <div class="value">2,535 / 1,125</div>
+            <div class="subtext">歷史天價 2,535 (2026/06/22) <a href="https://www.tradingview.com/symbols/TWSE-2330/" target="_blank">[TradingView]</a></div>
+        </div>
+        <div class="metric-card">
+            <div class="label">滾動本益比 (P/E)</div>
+            <div class="value">27.5 ~ 31.8 倍</div>
+            <div class="subtext">估值處於合理健康區間 <a href="https://www.wantgoo.com/stock/2330/enterprise-value/price-to-earning-ratio" target="_blank">[玩股網]</a></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- 執行摘要 -->
+        <div class="section">
+            <div class="section-title">📌 1. 執行摘要</div>
+            <div class="summary-box">
+                <p><strong>核心投資論點：</strong>台積電（2330）作為全球晶圓代工龍頭，受惠於全球 AI 高效能運算（HPC）需求持續強勁及先進製程（3nm/2nm）競爭優勢，營運保持爆發性成長。2026 年第二季財報顯示單季 EPS 達 27.25 元再創新高，毛利率突破 62% <a href="https://news.cnyes.com/news/id/6536780" target="_blank">[鉅亨網]</a>。目前股價在 2,400 元附近震盪整理，本益比約在 27.5 至 31.8 倍之間 <a href="https://www.wantgoo.com/stock/2330/enterprise-value/price-to-earning-ratio" target="_blank">[玩股網]</a>。綜合評估基本面極具支撐力，短線高位階呈現區間震盪消化賣壓格局。</p>
+            </div>
+        </div>
+
+        <!-- 基本面分析 -->
+        <div class="section">
+            <div class="section-title">📊 2. 基本面分析</div>
+            
+            <h3>(1) 財務與營運數據</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>最新數據與表現</th>
+                        <th>年增 / 月增率</th>
+                        <th>備註 / 參考來源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026/05 合併營收</strong></td>
+                        <td>4,169.75 億新台幣</td>
+                        <td><span class="badge badge-success">月增 +1.5% | 年增 +30.1%</span></td>
+                        <td><a href="https://money.udn.com/money/story/5607/9557696" target="_blank">[經濟日報]</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026/06 合併營收</strong></td>
+                        <td>4,426.80 億新台幣</td>
+                        <td><span class="badge badge-success">月增 +6.2% | 年增 +67.9%</span></td>
+                        <td>創單月歷史新高 <a href="https://udn.com/news/story/7253/9624491" target="_blank">[聯合新聞網]</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 Q1 每股盈餘 (EPS)</strong></td>
+                        <td>22.08 元</td>
+                        <td><span class="badge badge-info">單季強勁</span></td>
+                        <td><a href="https://money.udn.com/money/story/5607/9445671" target="_blank">[經濟日報]</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 Q2 每股盈餘 (EPS)</strong></td>
+                        <td>27.25 元</td>
+                        <td><span class="badge badge-success">單季歷史新高</span></td>
+                        <td>毛利率破 62% <a href="https://news.cnyes.com/news/id/6536780" target="_blank">[鉅亨網]</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 上半年累計 EPS</strong></td>
+                        <td>49.33 元</td>
+                        <td><span class="badge badge-success">創同期新高</span></td>
+                        <td><a href="https://udn.com/news/story/12806/9633391" target="_blank">[聯合新聞網]</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026 全年預估 EPS</strong></td>
+                        <td>100 ~ 107+ 元</td>
+                        <td><span class="badge badge-success">年成長爆發</span></td>
+                        <td><a href="https://wealth.businessweekly.com.tw/GArticle.aspx?id=ARTL003018911" target="_blank">[商周財富網]</a>, <a href="https://cmnews.com.tw/article/zhouzhehan-1f0b6b0d-8ce7-11f1-936d-7450d1b584df" target="_blank">[周哲翰分析]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>(2) 產業競爭力與戰略優勢</h3>
+            <ul>
+                <li><strong>先進製程獨霸</strong>：N3（3nm）家族需求持續爆滿，N2（2nm）按預期時程推進量產，主要客戶涵蓋 NVIDIA、AMD、Apple、Broadcom 等頂尖科技巨頭。</li>
+                <li><strong>先進封裝產能瓶頸</strong>：CoWoS 先進封裝供不應求，公司正加速擴充產能，同時帶動封測合作夥伴外溢商機。</li>
+                <li><strong>高層展望信心</strong>：魏哲家董事長於法說會表示 AI 需求「越來越強」，半導體榮景持續延伸 <a href="https://wealth.businessweekly.com.tw/GArticle.aspx?id=ARTL003018911" target="_blank">[商周財富網]</a>。全年配息預計至少 24 元以上 <a href="https://www.sinotrade.com.tw/richclub/hotstock/%E5%8F%B0%E7%A9%8D%E9%9B%BB-2330-%E8%82%A1%E6%9D%B1%E6%9C%88%E7%99%BB%E5%A0%B4-%E9%AD%8F%E5%93%B2%E5%AE%B6-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-6a20eef7b55a18bfaf273e78" target="_blank">[富聯網]</a>。</li>
+            </ul>
+        </div>
+
+        <!-- 技術面分析 -->
+        <div class="section">
+            <div class="section-title">📈 3. 技術面分析</div>
+            
+            <h3>(1) 價格走勢與均線結構</h3>
+            <ul>
+                <li><strong>走勢位階</strong>：股價於 2026 年 6 月達歷史天價 2,535 元後進入高檔消化整理 <a href="https://www.tradingview.com/symbols/TWSE-2330/" target="_blank">[TradingView]</a>，近期於 2,300 - 2,450 元區間沉澱震盪。</li>
+                <li><strong>均線排列</strong>：
+                    <ul>
+                        <li><strong>中長期均線</strong>：半年線（約 2,147 元）、年線（約 1,779 元）呈穩健向上多頭排列 <a href="https://ifa.ai/tw-stock/2330/technical-chart?type=channel_concept%2F657ab06ee13546f54aa6b24c" target="_blank">[ifa.ai]</a>。</li>
+                        <li><strong>中短期均線</strong>：月線（約 2,371 元）與季線（約 2,347 元）形成主要動態支撐與交會區 <a href="https://ifa.ai/tw-stock/2330/technical-chart?type=channel_concept%2F657ab06ee13546f54aa6b24c" target="_blank">[ifa.ai]</a>。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>(2) 技術指標與價量關係</h3>
+            <ul>
+                <li><strong>KD 指標</strong>：日線 KD 出現低檔黃金交叉後升至中高位階 <a href="https://ifa.ai/tw-stock/2330/technical-chart?type=channel_concept%2F657ab06ee13546f54aa6b24c" target="_blank">[ifa.ai]</a>，顯示短期下方買盤承接力道強。</li>
+                <li><strong>價量配合</strong>：整理期間未出現恐慌性爆量調節，量能適度萎縮洗盤，籌碼面結構尚稱穩健。</li>
+                <li><strong>關鍵價位關卡</strong>：
+                    <ul>
+                        <li><strong>主要支撐區</strong>：2,300 - 2,347 元（季線與短線低點強支撐）。</li>
+                        <li><strong>主要壓力區</strong>：2,450 - 2,535 元（前高歷史天價挑戰區）。</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 風險提示與結論 -->
+        <div class="section">
+            <div class="section-title">⚠️ 4. 風險提示與綜合結論</div>
+            
+            <div class="risk-card">
+                <h4>潛在風險因素</h4>
+                <ul>
+                    <li><strong>地緣政治與供應鏈分散成本</strong>：海外建廠進度及相關營運費用對長期毛利率之潛在壓力。</li>
+                    <li><strong>總體經濟波動</strong>：全球大環境降息節奏與消費性終端產品復甦動能仍需留意。</li>
+                    <li><strong>外資籌碼調節</strong>：在高位階區間外資短線之套利與獲利調節賣壓。</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>綜合結論：</strong>台積電（2330）具備極高的晶圓代工壁壘與產業競爭優勢。2026 年上半年基本面營收與獲利數據亮眼，下半年及未來在 AI 晶片需求強勁支撐下，中長線成長趨勢無虞。短線高檔橫盤洗盤有助於籌碼沉澱，建議投資人密切關注月營收發布、CoWoS 產能與法人籌碼動向。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>免責聲明：本報告僅供參考，不構成任何投資建議或買賣邀約。投資人應獨立評估風險並自負投資履約責任。</p>
+        <p>© 2026 AI Stock Research Assistant. All rights reserved.</p>
+    </div>
+</div>
+
+</body>
+</html>
