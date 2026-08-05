@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌行銷文案 | VisionAI 台灣智慧眼鏡專案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans TC', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00F2FE',
+                            neon: '#10B981',
+                            darkBg: '#080C14',
+                            cardBg: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; background-color: #080C14; color: #E2E8F0; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-[#080C14] text-slate-200 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Mobile Header -->
+    <header class="lg:hidden sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-sm">V</div>
+            <span class="font-bold text-white text-base tracking-wide">VisionAI Portal</span>
+        </div>
+        <button id="mobile-toggle" class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900 border border-slate-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <div class="flex-1 flex max-w-[1600px] w-full mx-auto">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-72 bg-[#0C1220] border-r border-slate-800/80 p-5 shrink-0 sticky top-0 h-screen overflow-y-auto">
+            <div class="flex items-center gap-3 px-2 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20">V</div>
+                <div>
+                    <h1 class="font-black text-white text-lg tracking-wider">VisionAI</h1>
+                    <p class="text-[11px] text-cyan-400/90 font-medium tracking-wide uppercase">Taiwan Smart Glasses</p>
+                </div>
+            </div>
+
+            <div class="text-xs font-semibold uppercase text-slate-500 tracking-wider px-3 mb-3">專案導覽入口</div>
+            
+            <nav class="space-y-1.5 flex-1">
+                
+            <a href="index.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">🏠 專案主入口</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Dashboard</span>
+            </a>
+        
+
+            <a href="01-research.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">01. 市場研究報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Research</span>
+            </a>
+        
+
+            <a href="02-strategy.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">02. 策略定位文件</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Strategy</span>
+            </a>
+        
+
+            <a href="03-copywriting.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group bg-cyan-500/20 text-cyan-300 border-r-4 border-cyan-400 font-semibold shadow-lg shadow-cyan-500/10">
+                <span class="flex items-center gap-2.5 text-sm">03. 品牌行銷文案</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Copywriting</span>
+            </a>
+        
+
+            <a href="04-prototype.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">04. 網頁原型展示</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Prototype</span>
+            </a>
+        
+
+            <a href="05-qa-report.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">05. QA 稽核報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">QA Report</span>
+            </a>
+        
+
+            <a href="06-final-review.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">06. 全案整合報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Final Review</span>
+            </a>
+        
+            </nav>
+
+            <div class="mt-8 pt-4 border-t border-slate-800/80 px-2 text-xs text-slate-500 flex flex-col gap-1">
+                <p class="font-medium text-slate-400">Multi-Agent Team Framework</p>
+                <p>© 2026 VisionAI Project</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 sm:p-8 lg:p-12 overflow-y-auto max-w-5xl mx-auto w-full">
+            <div class="bg-[#0F172A]/70 backdrop-blur-md rounded-2xl border border-slate-800/80 p-6 sm:p-10 shadow-2xl shadow-black/50">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 mt-6 mb-6 pb-3 border-b border-slate-800 flex items-center gap-3">VisionAI 智慧眼鏡 — Landing Page 品牌行銷文案 (03-copywriting.md)</h1>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">一、 品牌名稱與 Slogan (Brand Name & Tagline)</h2>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">品牌名稱</strong>：<strong class="text-cyan-300 font-semibold">VisionAI 智慧眼鏡</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">主要 Slogan</strong>：<strong class="text-cyan-300 font-semibold">抬頭無感，看見即理解 — 專為繁體中文世界打造的次世代 AI 智慧眼鏡</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">副標題 (Tagline)</strong>：告別低頭焦慮。結合微光波導顯示、繁中在地 LLM 語音與寶島眼鏡一站式驗光，讓智慧科技完美融入你的靈魂之窗。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">二、 Hero Section 視覺與文案 (Hero Section)</h2>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. 視覺構想 (Visual Concept)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">背景/主圖</strong>：一名身穿俐落西裝的高階商務人士，在明亮的跨國會議室中自信地眼神直視對方談話，眼前微微浮現極具科技感的半透明綠光繁中雙向翻譯字幕；右側切換至戶外公路單車騎士，視野前方浮現懸浮轉向導航指示，眼神專注前方。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">畫面對比 (Before vs. After Flashing)</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><em class="text-slate-300 italic">Before</em>：低頭滑手機字典、演講頻繁低頭看講稿、騎車低頭看導航險象環生。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><em class="text-slate-300 italic">After</em>：自然抬頭自信直視、訊息即時浮現視野、解放雙手掌控全場。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. 標題與副標題 (Headline & Sub-headline)</h3>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner"># 抬頭，看見 AI 賦能的全新視野</blockquote>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner">### 告別低頭族的疲憊與尷尬。VisionAI 智慧眼鏡，將雙向翻譯、演講提詞與第一人稱拍攝，無感懸浮於你的眼前。</blockquote>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3. 主行動呼籲按鈕 (Call to Action Buttons)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">[Primary CTA]</strong>：`立即預約實體免費門市試戴`</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">[Secondary CTA]</strong>：`探索嘖嘖早鳥 65 折優惠`</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">三、 四大核心價值主張 (Value Propositions)</h2>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>                              ┌─────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│     VisionAI 四大核心價值主張 (UVP)     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">└────────────────────┬────────────────────┘</p>
+<p class="text-slate-300 my-3 leading-relaxed">│</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌─────────────────────────────────────────┼─────────────────────────────────────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│                                         │                                         │</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌────────┴────────┐                       ┌────────┴────────┐                       ┌────────┴────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 1. 抬頭無感     │                       │ 2. 繁中 AI 雙向 │                       │ 3. 寶島眼鏡     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│   看見即理解    │                       │    字幕即時翻譯 │                       │   30分鐘快配    │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┤                       ├─────────────────┤                       ├─────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 42g 超輕盈鈦腳│                       │ • 0.8s 延遲秒譯 │                       │ • 全台 300+ 門市│</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 微光波導不刺眼│                       │ • 台灣在地語音  │                       │ • 專利磁吸鏡框  │</p>
+└─────────────────┘                       └─────────────────┘                       └─────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. 抬頭無感，看見即理解 (Weightless Micro-Waveguide)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">擺脫重型 AR 的壓鼻噩夢，輕巧如時尚光學眼鏡</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200">採用航太級鈦合金鏡腳與高透光衍射光波導技術，整機重量僅 <strong class="text-cyan-300 font-semibold">42g</strong>。1,500 nits 高亮度顯示，無論在陽光下或室內，資訊如空氣般自然懸浮於眼前，外人完全無從察覺。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. 專為台灣打造：繁中 AI 雙向字幕即時翻譯 (Taiwan-LLM Core)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">0.8 秒極速轉譯，聽懂台灣口音與專業術語</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200">深度整合在地 Taiwan-LLM 大語言模型，專為台灣國語、台灣口音與台英混合用語優化。面對英、日、韓、德等多國語言，0.8 秒內於眼前呈現繁中懸浮字幕，跨國會議談判無往不利。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3. 全台 300+ 寶島眼鏡，30 分鐘一站式驗光快配 (Optometry Alliance)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">打破科技眼鏡「近視無法配鏡」的最後一道牆</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200">獨家結盟寶島眼鏡與 2020EYEhaus。專利磁吸快拆度數鏡框，全台門市專業驗光，現場加工裁切，<strong class="text-cyan-300 font-semibold">最快 30 分鐘交件</strong>，近視、散光或老花皆能完美適配。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">4. 資安級去相機與硬體隱私雙防護 (Privacy & Safety First)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">專為高管資安與公共隱私打造的安心設計</strong></span></li>
+<li class="leading-relaxed"><span class="text-slate-200">提供 <strong class="text-cyan-300 font-semibold">Vision Pro-Biz 硬體級「完全無相機」版本</strong>，100% 符合半導體廠區與高階資安會議規範；戶外版配備硬體直驅錄影綠色指示燈，防偷拍更安心。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">四、 雙線產品展示文案 (Product Showcase Tiers)</h2>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>                              ┌─────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│      VisionAI 雙線產品展示矩陣          │</p>
+<p class="text-slate-300 my-3 leading-relaxed">└────────────────────┬────────────────────┘</p>
+<p class="text-slate-300 my-3 leading-relaxed">│</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌─────────────────────────────────────────┴─────────────────────────────────────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│                                                                                   │</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌────────┴────────┐                                                                 ┌────────┴────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Vision Pro-Biz  │                                                                 │ Vision Active-Go│</p>
+<p class="text-slate-300 my-3 leading-relaxed">│  (商務無相機版)  │                                                                 │  (戶外影音拍攝版)│</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┤                                                                 ├─────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 建議售價 $16,800│                                                               │ • 建議售價 $12,800│</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 專注提詞/翻譯 │                                                                 │ • 專注 4K POV   │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 科技廠資安合規│                                                                 │ • 開放式定向音訊│</p>
+└─────────────────┘                                                                 └─────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. Vision Pro-Biz (商務無相機 HUD 抬頭顯示版)</h3>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner"><strong class="text-cyan-300 font-semibold">「在眼神交流中掌控全場，讓 AI 成為你的隱形智囊。」</strong></blockquote>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">建議售價</strong>：<strong class="text-cyan-300 font-semibold">NT$ 16,800</strong> (早鳥價 NT$ 11,900)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">核心亮點</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">硬體級完全無相機 (Camera-less)</strong>：通過科學園區、半導體廠與金融資安檢驗。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">極致輕量 42g</strong>：全天配戴無負擔，配重 50:50。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">微波導懸浮提詞與字幕</strong>：語速追蹤自動滾動講稿，簡報演講不卡詞。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">一鍵 AI 會議摘要</strong>：自動識別講者，生成 Action Items 並同步 Notion / Outlook。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. Vision Active-Go (戶外影音第一人稱拍攝版)</h3>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner"><strong class="text-cyan-300 font-semibold">「記錄你的第一人稱精彩，解放雙手享受每一步衝刺。」</strong></blockquote>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">建議售價</strong>：<strong class="text-cyan-300 font-semibold">NT$ 12,800</strong> (早鳥價 NT$ 8,900)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">核心亮點</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">4K/30fps POV 超廣角相機</strong>：一鍵按壓即刻抓拍，防手震紀錄單車/運動時光。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">硬體連動錄影 LED 指示燈</strong>：綠燈亮起不可被軟體破解，保障大眾隱私。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">IP65 防水防塵</strong>：抗汗抗雨，搭配開放式定向音訊，聽音樂導航同時感知車況。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">快拆偏光太陽鏡片</strong>：防紫外線 UV400，專利磁吸近視度數內框。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">五、 真實痛點對比 (Before vs. After Comparison)</h2>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">應用情境 (Scenario)</th><th class="py-3.5 px-4 border-b border-slate-700/80">傳統模式 (Before VisionAI)</th><th class="py-3.5 px-4 border-b border-slate-700/80">VisionAI 智慧體驗 (After VisionAI)</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">跨國高階商務會議</strong></td><td class="py-3 px-4">低頭滑手機查字典，錯過重要講者語氣，顯得缺乏自信與專業。</td><td class="py-3 px-4">抬頭直視對方，繁中翻譯字幕在視野上方 15 度懸浮流動，對答流利。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">公開演講與 Keynote 簡報</strong></td><td class="py-3 px-4">頻繁轉頭看投影幕或低頭看讀稿機，缺乏與聽眾的眼神交流 (Eye Contact)。</td><td class="py-3 px-4">講稿字幕隨語速自動滾動提示，眼神全程聚焦聽眾，展現強大氣場。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">單車騎乘與戶外導航</strong></td><td class="py-3 px-4">低頭看龍頭車錶或手機 Google Maps，前方路況出現盲區，極度危險。</td><td class="py-3 px-4">轉向指示與車速直接懸浮視野前方，抬頭專注路況，安全提升 100%。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">近視族群配戴體驗</strong></td><td class="py-3 px-4">科技眼鏡無法適配度數，需勉強配戴隱形眼鏡，乾澀不適。</td><td class="py-3 px-4">全台寶島眼鏡 30 分鐘快配，專利磁吸扣環一秒拆裝，清晰舒適。</td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">六、 優惠套餐與行動呼籲 (Pricing & Call to Action)</h2>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. 超值入手方案 (Pricing & Bundles)</h3>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│                               VisionAI 三大優惠購入方案                                 │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────────────┬─────────────────────────┬─────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 1. 嘖嘖集資超早鳥 (65折) │ 2. 電信 5G 綁約專案     │ 3. 全台寶島眼鏡門市 VIP 體驗        │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────────────┼─────────────────────────┼─────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • Pro-Biz: NT$ 11,900   │ • 5G 月繳 $1,399 (綁約) │ • 全台 300+ 門市免費試戴           │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • Active-Go: NT$ 8,900  │ • Active-Go 專案價 $0   │ • 現場體驗即贈 NT$ 500 配鏡折抵券   │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 加贈 1年 Premium 訂閱 │ • Pro-Biz 專案價 $3,990 │ • 專人一對一驗光適配諮詢            │</p>
+└─────────────────────────┴─────────────────────────┴─────────────────────────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. 終極行動呼籲 (Final Call to Action)</h3>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner">## 準備好升級你的視野了嗎？</blockquote>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner"><strong class="text-cyan-300 font-semibold">立即預約全台寶島眼鏡門市試戴，或搶先鎖定嘖嘖集資早鳥 65 折限量名額！</strong></blockquote>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner"></blockquote>
+<blockquote class="border-l-4 border-cyan-500 bg-cyan-950/30 p-4 my-4 rounded-r-xl italic text-slate-300 shadow-inner">[ 🔘 立即預約實體免費試戴 ]   [ 🔘 搶先領取嘖嘖早鳥折扣券 ]</blockquote>
+
+<hr class="border-slate-800 my-8">
+<em class="text-slate-300 italic">文案產出日期：2026 年 8 月</em>  
+<em class="text-slate-300 italic">文案撰寫 Agent：Copywriter Agent (Multi-Agent Team Framework)</em>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
+            sidebar.classList.toggle('z-50');
+            sidebar.classList.toggle('w-full');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA 稽核報告 | VisionAI 台灣智慧眼鏡專案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans TC', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00F2FE',
+                            neon: '#10B981',
+                            darkBg: '#080C14',
+                            cardBg: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; background-color: #080C14; color: #E2E8F0; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-[#080C14] text-slate-200 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Mobile Header -->
+    <header class="lg:hidden sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-sm">V</div>
+            <span class="font-bold text-white text-base tracking-wide">VisionAI Portal</span>
+        </div>
+        <button id="mobile-toggle" class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900 border border-slate-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <div class="flex-1 flex max-w-[1600px] w-full mx-auto">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-72 bg-[#0C1220] border-r border-slate-800/80 p-5 shrink-0 sticky top-0 h-screen overflow-y-auto">
+            <div class="flex items-center gap-3 px-2 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20">V</div>
+                <div>
+                    <h1 class="font-black text-white text-lg tracking-wider">VisionAI</h1>
+                    <p class="text-[11px] text-cyan-400/90 font-medium tracking-wide uppercase">Taiwan Smart Glasses</p>
+                </div>
+            </div>
+
+            <div class="text-xs font-semibold uppercase text-slate-500 tracking-wider px-3 mb-3">專案導覽入口</div>
+            
+            <nav class="space-y-1.5 flex-1">
+                
+            <a href="index.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">🏠 專案主入口</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Dashboard</span>
+            </a>
+        
+
+            <a href="01-research.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">01. 市場研究報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Research</span>
+            </a>
+        
+
+            <a href="02-strategy.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">02. 策略定位文件</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Strategy</span>
+            </a>
+        
+
+            <a href="03-copywriting.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">03. 品牌行銷文案</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Copywriting</span>
+            </a>
+        
+
+            <a href="04-prototype.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">04. 網頁原型展示</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Prototype</span>
+            </a>
+        
+
+            <a href="05-qa-report.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group bg-cyan-500/20 text-cyan-300 border-r-4 border-cyan-400 font-semibold shadow-lg shadow-cyan-500/10">
+                <span class="flex items-center gap-2.5 text-sm">05. QA 稽核報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">QA Report</span>
+            </a>
+        
+
+            <a href="06-final-review.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">06. 全案整合報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Final Review</span>
+            </a>
+        
+            </nav>
+
+            <div class="mt-8 pt-4 border-t border-slate-800/80 px-2 text-xs text-slate-500 flex flex-col gap-1">
+                <p class="font-medium text-slate-400">Multi-Agent Team Framework</p>
+                <p>© 2026 VisionAI Project</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 sm:p-8 lg:p-12 overflow-y-auto max-w-5xl mx-auto w-full">
+            <div class="bg-[#0F172A]/70 backdrop-blur-md rounded-2xl border border-slate-800/80 p-6 sm:p-10 shadow-2xl shadow-black/50">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 mt-6 mb-6 pb-3 border-b border-slate-800 flex items-center gap-3">VisionAI 智慧眼鏡專案：品質與一致性稽核報告 (05-qa-report.md)</h1>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">專案基本資訊與稽核摘要 (Executive Summary)</h2>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">專案名稱</strong>：台灣智慧眼鏡專案 (Taiwan Smart Glasses Project)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">文件名稱</strong>：專案品質、一致性與法規合規稽核報告 (QA & Compliance Audit Report)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">稽核 Agent</strong>：QA Agent (Multi-Agent Team Framework)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">被稽核標的</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. `01-research.md` (台灣智慧眼鏡市場深度研究報告)</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. `02-strategy.md` (台灣智慧眼鏡專案：整體策略定位文件)</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. `03-copywriting.md` (VisionAI 智慧眼鏡 Landing Page 品牌行銷文案)</p>
+<p class="text-slate-300 my-3 leading-relaxed">4. `04-prototype/index.html` (VisionAI 智慧眼鏡 Landing Page 網頁原型)</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">稽核日期</strong>：2026 年 8 月</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">總體稽核結論 (Overall Assessment)</h3>
+
+<p class="text-slate-300 my-3 leading-relaxed">本稽核報告針對「台灣智慧眼鏡專案」之前續產出文件（市場研究、策略定位、行銷文案與網頁原型）進行全面之<strong class="text-cyan-300 font-semibold">策略一致性</strong>、<strong class="text-cyan-300 font-semibold">前端程式品質</strong>與<strong class="text-cyan-300 font-semibold">法規風險合規性</strong>審查。</p>
+
+<strong class="text-cyan-300 font-semibold">整體評等：良好 (Good) / 需執行修正與修補 (Requires Fixes)</strong>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">優點</strong>：四份文件高度貫穿「抬頭無感，看見即理解」的核心訴求，產品雙線定位（商務無相機版 `Vision Pro-Biz` 與戶外影音版 `Vision Active-Go`）邏輯清晰，並成功結合寶島眼鏡 30 分鐘快配與電信 5G 綁約方案。法規防線亦規劃了完整的免責聲明與硬體去相機/綠光錄影指示燈設計。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">主要缺失 (Key Issues)</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">嚴重代碼生成瑕疵 (Critical Artifact Corruption)</strong>：網頁原型 `index.html` 內文出現 6 處將「0元/0元起」誤替換為系統暫存指令 `/tmp/subagent_run_y8vZM5MP.sh` 之文字污染缺失。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">定價折扣算術不符 (Pricing Discount Mismatch)</strong>：行銷文案與原型標註「嘖嘖早鳥 65 折」，但實際顯示之早鳥價（$11,900 與 $8,900）相較建議售價（$16,800 與 $12,800）計算後實際為 <strong class="text-cyan-300 font-semibold">70折~71折</strong>，產生誇大折扣之法規與消費爭議風險。</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. <strong class="text-cyan-300 font-semibold">網頁原型劃線價格打錯 (Strikethrough Price Typo)</strong>：集資卡片中之劃線建議售價誤寫為 `2,800` 與 `6,800`（漏掉萬位數 1），導致劃線原價低於早鳥價之視覺邏輯矛盾。</p>
+<p class="text-slate-300 my-3 leading-relaxed">4. <strong class="text-cyan-300 font-semibold">規格細節落差 (Specification Gaps)</strong>：策略文件標註 Pro-Biz 為 IP54、Active-Go 為 IP65，但文案與原型漏標 Pro-Biz 的 IP54 防護等級；電池續航力（14小時與8小時）未完整載於網頁原型規格表中。</p>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">一、 策略與文案一致性審查 (Strategy vs. Copywriting Alignment)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">本章節針對 `02-strategy.md` (策略定位)、`03-copywriting.md` (行銷文案) 與 `04-prototype/index.html` (網頁原型) 進行三方比對，核對品牌訴求、產品名稱、規格細節與商業定價是否完全吻合。</p>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1.1 品牌訴求與定位一致性 (Brand Vision & UVPs)</h3>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">審查項目</th><th class="py-3.5 px-4 border-b border-slate-700/80">策略文件 (`02-strategy.md`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">行銷文案 (`03-copywriting.md`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">網頁原型 (`04-prototype/index.html`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">一致性核對結果</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">品牌名稱</strong></td><td class="py-3 px-4">VisionAI 智慧眼鏡</td><td class="py-3 px-4">VisionAI 智慧眼鏡</td><td class="py-3 px-4">VisionAI 智慧眼鏡</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">主要 Slogan</strong></td><td class="py-3 px-4">抬頭無感，看見即理解</td><td class="py-3 px-4">抬頭無感，看見即理解 — 專為繁體中文世界打造的次世代 AI 智慧眼鏡</td><td class="py-3 px-4">抬頭，看見 AI 賦能的全新視野 / 抬頭無感，看見即理解</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">核心賣點 1</strong></td><td class="py-3 px-4">抬頭無感 看見即理解 (42g/微波導)</td><td class="py-3 px-4">抬頭無感 看見即理解 (42g鈦腳/1500nits)</td><td class="py-3 px-4">1. 抬頭無感，看見即理解 (42g航太鈦鏡腳)</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">核心賣點 2</strong></td><td class="py-3 px-4">繁中 AI 雙向字幕即時翻譯 (0.8s)</td><td class="py-3 px-4">繁中 AI 雙向字幕即時翻譯 (0.8s/Taiwan-LLM)</td><td class="py-3 px-4">2. 繁中 AI 雙向字幕翻譯 (0.8s極速轉譯)</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">核心賣點 3</strong></td><td class="py-3 px-4">寶島眼鏡 30分鐘快配 (300+門市)</td><td class="py-3 px-4">寶島眼鏡 30分鐘快配 (300+門市/磁吸鏡框)</td><td class="py-3 px-4">3. 寶島眼鏡 30分鐘快配 (300+門市/磁吸)</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">核心賣點 4</strong></td><td class="py-3 px-4">硬體級去相機與隱私雙防護</td><td class="py-3 px-4">資安級去相機與硬體隱私雙防護</td><td class="py-3 px-4">4. 資安級去相機雙防護 (Pro-Biz無相機)</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1.2 雙線產品矩陣與規格比對 (Product Matrix & Hardware Specs)</h3>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">產品線與規格</th><th class="py-3.5 px-4 border-b border-slate-700/80">策略定位 (`02-strategy.md`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">行銷文案 (`03-copywriting.md`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">網頁原型 (`index.html`)</th><th class="py-3.5 px-4 border-b border-slate-700/80">差異分析與建議</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">商務版名稱</strong></td><td class="py-3 px-4">Vision Pro-Biz (商務抬頭顯示版)</td><td class="py-3 px-4">Vision Pro-Biz (商務無相機 HUD 抬頭顯示版)</td><td class="py-3 px-4">Vision Pro-Biz (商務無相機版)</td><td class="py-3 px-4">一致，副標表達清晰。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">戶外版名稱</strong></td><td class="py-3 px-4">Vision Active-Go (戶外影音拍攝版)</td><td class="py-3 px-4">Vision Active-Go (戶外影音拍攝版)</td><td class="py-3 px-4">Vision Active-Go (戶外影音拍攝版)</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong></td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">整機重量</strong></td><td class="py-3 px-4">Pro-Biz: <42g / Active-Go: <48g</td><td class="py-3 px-4">Pro-Biz: 42g / Active-Go: <48g (簡稱輕量)</td><td class="py-3 px-4">Pro-Biz: 42g / Active-Go: 未特別強調 48g</td><td class="py-3 px-4">基本一致，建議原型補充 Active-Go 48g 數據。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">相機模組</strong></td><td class="py-3 px-4">Pro-Biz: 完全無相機<br>Active-Go: 1200萬畫素 4K/30fps</td><td class="py-3 px-4">Pro-Biz: 硬體級完全無相機<br>Active-Go: 4K/30fps POV 超廣角</td><td class="py-3 px-4">Pro-Biz: 硬體級完全無相機<br>Active-Go: 4K/30fps POV 超廣角</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">完全一致</strong>（強烈突出無相機與資安合規）。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">防水防塵等級</strong></td><td class="py-3 px-4">Pro-Biz: <strong class="text-cyan-300 font-semibold">IP54</strong><br>Active-Go: <strong class="text-cyan-300 font-semibold">IP65</strong></td><td class="py-3 px-4">Pro-Biz: 未標註<br>Active-Go: <strong class="text-cyan-300 font-semibold">IP65</strong></td><td class="py-3 px-4">Pro-Biz: 未標註<br>Active-Go: <strong class="text-cyan-300 font-semibold">IP65</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">資訊遺漏</strong>：文案與原型漏載 Pro-Biz 的 IP54 生活防水等級。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">續航時間</strong></td><td class="py-3 px-4">Pro-Biz: 14h (HUD) + 34h 充電盒<br>Active-Go: 8h 音樂 / 2.5h 錄影</td><td class="py-3 px-4">未在主要卡片強調具體小時數</td><td class="py-3 px-4">未在卡片強調具體小時數</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">資訊遺漏</strong>：建議網頁原型產品卡片補充續航時間規格。</td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1.3 定價、早鳥折扣與電信方案算術/邏輯核對 (Pricing & Discount Math Check)</h3>
+
+<p class="text-slate-300 my-3 leading-relaxed">本項審查發現顯著之<strong class="text-cyan-300 font-semibold">價格數字邏輯衝突與打字錯誤</strong>，彙整如下：</p>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>┌─────────────────────────────────────────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│                       價格與折扣算術核對異常分析表                            │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┬───────────┬───────────┬──────────────┬────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 產品/方案       │ 建議售價  │ 早鳥宣稱  │ 早鳥實際標價 │ 實際折扣率 (試算)  │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┼───────────┼───────────┼──────────────┼────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Vision Pro-Biz  │ NT$ 16,800│ 65 折     │ NT$ 11,900   │ 11,900/16,800 = 70.83% (約71折)│</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Vision Active-Go│ NT$ 12,800│ 65 折     │ NT$ 8,900    │ 8,900/12,800 = 69.53% (約70折) │</p>
+└─────────────────┴───────────┴───────────┴──────────────┴────────────────────┘</code></pre>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">具體核對缺失：</h4>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">折扣比率算術不符 (Mathematical Mismatch)</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">行銷文案與網頁原型主打「<strong class="text-cyan-300 font-semibold">嘖嘖集資超早鳥 (65折)</strong>」。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">若依據 65 折計算：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Vision Pro-Biz 應為 $16,800 	imes 0.65 = \mathbf{NT\$\ 10,920}$ (文案/原型標註為 NT$ 11,900，相當於 71 折)。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Vision Active-Go 應為 $12,800 	imes 0.65 = \mathbf{NT\$\ 8,320}$ (文案/原型標註為 NT$ 8,900，相當於 70 折)。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">爭議風險</strong>：宣稱「65折」但實際售價高於 65 折，恐涉公平交易法不實廣告風險。</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">網頁原型劃線原價打錯 (Strikethrough Price HTML Typo)</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">在 `04-prototype/index.html` 的 `#pricing` 區塊中：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Active-Go 卡片寫為：`NT$ 8,900 <span class="line-through">2,800</span>` (漏掉萬位數 `1`，應為 `12,800`)。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Pro-Biz 卡片寫為：`NT$ 11,900 <span class="line-through">6,800</span>` (漏掉萬位數 `1`，應為 `16,800`)。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">這導致視覺上出現「劃線原價 $2,800 竟然比早鳥價 $8,900 還便宜」的嚴重荒謬畫面。</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">3. <strong class="text-cyan-300 font-semibold">5G 電信綁約專案金額</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">策略、文案與原型三者一致：月繳 $1,399 (綁約 36 個月)，Active-Go 專案價 <strong class="text-cyan-300 font-semibold">NT$ 0</strong>，Pro-Biz 專案價 <strong class="text-cyan-300 font-semibold">NT$ 3,990</strong>。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">二、 網頁原型 HTML/CSS/JS 語法與 RWD 相容性檢查 (Prototype Code Audit)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">針對 `/working_dir/c_0e2858e35f2ff4a7/04-prototype/index.html` 進行單元與整合測試檢查。</p>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2.1 HTML5 語法結構與語意標籤 (HTML Structure)</h3>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">文件聲明與標頭</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">使用 `<!DOCTYPE html>`、`<html lang="zh-TW" class="scroll-smooth">`，正確宣告繁體中文語系與平滑滾動特性。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">`<head>` 包含完整 `<meta charset="UTF-8">`、`<meta name="viewport" content="width=device-width, initial-scale=1.0">` 及 OpenGraph 簡述。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">語意化標籤 (Semantic Tags)</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">正確使用 `<header>`、`<nav>`、`<main>` (implicit in sections)、`<section>`、`<footer>` 及 `<form>`，有助於 SEO 與螢幕閱讀器解析。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">語法完備性</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">無未閉合之標籤或錯位 DOM 結構。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2.2 Tailwind CSS 與響應式布局 (Tailwind CSS & RWD)</h3>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">CDN 與 Custom Theme 組態</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">引進 Tailwind CSS v3 CDN，並透過 `tailwind.config` 擴充 `brand.cyan` (`#00F2FE`)、`brand.neon` (`#10B981`)、`brand.darkBg` (`#080C14`) 等科技暗色調主題，完美匹配 HUD 視覺感。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">響應式斷點 (Responsive Breakpoints)</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">靈活運用 `sm:` (640px)、`md:` (768px)、`lg:` (1024px) 進行斷點控制：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Header 導覽列：電腦版顯示完整選單，手機版 (`md:hidden`) 自動切換為漢堡按鈕與抽屜選單 (`#mobile-menu`)。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Grid 排版：Hero Section、四大賣點 (`md:grid-cols-2 lg:grid-cols-4`) 與雙線產品 (`lg:grid-cols-12`) 均具備良好的行動端自適應能力。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">視覺與動畫效果</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">使用 `backdrop-blur-md` (毛玻璃面板 `glass-panel`)、`gradient-border` (漸層邊框)、`shadow-neon-cyan` (霓虹發光) 與 HUD 網格背景，視覺品質極高。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2.3 JavaScript 互動功能測試 (JS Functions)</h3>
+
+<p class="text-slate-300 my-3 leading-relaxed">網頁原型內含 2 段 `<script>` 腳本，經逐行靜態分析測試結果如下：</p>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">互動功能</th><th class="py-3.5 px-4 border-b border-slate-700/80">JavaScript 函數/邏輯</th><th class="py-3.5 px-4 border-b border-slate-700/80">觸發 DOM 元素 / ID</th><th class="py-3.5 px-4 border-b border-slate-700/80">測試結果與運作狀態</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">預約日期最小值設定</strong></td><td class="py-3 px-4">`DOMContentLoaded`</td><td class="py-3 px-4">`#form-date`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">通過</strong>：自動設定預設日期為明天 (`tomorrow.toISOString()`)，限制 `min` 日期。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">手機端導覽抽屜</strong></td><td class="py-3 px-4">Event Listener</td><td class="py-3 px-4">`#mobile-menu-btn`<br>`#mobile-menu`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">通過</strong>：點擊漢堡按鈕切換 `.hidden`；點擊選單連結 (`.mobile-link`) 自動收合抽屜。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">Hero 視角切換器</strong></td><td class="py-3 px-4">`switchHeroView(view)`</td><td class="py-3 px-4">`#btn-hero-before`, `#btn-hero-after`<br>`#view-hero-before`, `#view-hero-after`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">通過</strong>：可平滑切換傳統低頭痛點 (`before`) 與 VisionAI 懸浮 HUD 畫面 (`after`)。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">雙線產品 Tab 切換</strong></td><td class="py-3 px-4">`switchProductTab(tab)`</td><td class="py-3 px-4">`#tab-btn-probiz`, `#tab-btn-activego`<br>`#product-card-probiz`, `#product-card-activego`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">通過</strong>：動態切換 Pro-Biz 與 Active-Go 產品卡片與按鈕 Highlight 樣式。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">門市選單縣市連動</strong></td><td class="py-3 px-4">`updateStoreOptions()`</td><td class="py-3 px-4">`#form-region`<br>`#form-store`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">通過</strong>：選擇「台北市/新竹縣市/台中市」等縣市時，動態渲染對應之寶島眼鏡門市清單。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">預約表單提交與 Modal</strong></td><td class="py-3 px-4">`handleBookingSubmit(e)`<br>`closeModal()`</td><td class="py-3 px-4">`#booking-form`<br>`#booking-modal`</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">部分通過</strong>：提交表單可攔截重新整理並彈出試戴成功 Modal；點擊按鈕可關閉 Modal 並重置表單。</td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2.4 前端代碼缺失與生成瑕疵檢測 (Critical Front-end Defects)</h3>
+
+<p class="text-slate-300 my-3 leading-relaxed">本稽核在 `04-prototype/index.html` 中發現以下<strong class="text-cyan-300 font-semibold">嚴重瑕疵</strong>：</p>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">瑕疵 1：系統指令路徑文字污染 (Critical Code Generation Corruption)</h4>
+<p class="text-slate-300 my-3 leading-relaxed">在 HTML 檔案中出現 6 處文字遭意外替換為 `/tmp/subagent_run_y8vZM5MP.sh` 之遺留指令路徑，影響正式對外展演畫面：</p>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">Line 605</strong> (價格區塊副標): `...不論是嘖嘖集資早鳥、電信 5G /tmp/subagent_run_y8vZM5MP.sh 專案，還是門市試戴優惠...`</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">Line 635</strong> (Plan 2 註解): `<!-- Plan 2: 電信 5G /tmp/subagent_run_y8vZM5MP.sh 專案 (Highlighted) -->`</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. <strong class="text-cyan-300 font-semibold">Line 637</strong> (Plan 2 Badge): `...5G 綁約 /tmp/subagent_run_y8vZM5MP.sh 帶回家...`</p>
+<p class="text-slate-300 my-3 leading-relaxed">4. <strong class="text-cyan-300 font-semibold">Line 638</strong> (Plan 2 標題): `<h3 ...>電信 5G /tmp/subagent_run_y8vZM5MP.sh 專案</h3>`</p>
+<p class="text-slate-300 my-3 leading-relaxed">5. <strong class="text-cyan-300 font-semibold">Line 739</strong> (表單核取方塊): `...<span>想了解電信 5G /tmp/subagent_run_y8vZM5MP.sh 專案</span>`</p>
+<p class="text-slate-300 my-3 leading-relaxed">6. <strong class="text-cyan-300 font-semibold">Line 782</strong> (Footer 免責聲明): `<p>4. 電信 5G 專案之 /tmp/subagent_run_y8vZM5MP.sh 元起優惠需配合指定電信公司...</p>`</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">原因分析</strong>：Developer Agent 在執行腳本替換時，誤將目標字串（如 `0元` 或 `0`）替換為腳本執行檔路徑。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">瑕疵 2：劃線原價數值漏字 (Pricing Strikethrough Typo)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Line 623</strong>: `NT$ 8,900 <span class="text-xs text-gray-500 line-through">2,800</span>` （`2,800` 應修正為 `12,800`）。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Line 625</strong>: `NT$ 11,900 <span class="text-xs text-gray-500 line-through">6,800</span>` （`6,800` 應修正為 `16,800`）。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">瑕疵 3：Modal 無障礙與外圍點擊關閉缺失 (Modal UX & Accessibility Gap)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">預約成功 Modal (`#booking-modal`) 目前僅能透過點擊下方「好的，返回網站」按鈕關閉。未實作點擊背景遮罩 (Backdrop Click) 或按壓 `ESC` 鍵關閉機制，且缺乏 `role="dialog"` 與 `aria-modal="true"` 屬性。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">三、 法規風險與合規性評估 (Compliance Risk Assessment)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">智慧眼鏡涉及「醫療器材」、「驗光配鏡」、「個人資料保護/隱私」與「消費者保護」等多重法規監管。針對本專案之合規性評估如下：</p>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>                             ┌─────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│    台灣智慧眼鏡四大法規合規防線評估     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">└────────────────────┬────────────────────┘</p>
+<p class="text-slate-300 my-3 leading-relaxed">│</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌─────────────────────────────────────────┼─────────────────────────────────────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│                                         │                                         │</p>
+<p class="text-slate-300 my-3 leading-relaxed">┌───────┴────────┐                       ┌────────┴────────┐                       ┌────────┴────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 1. 醫療器材法規│                       │ 2. 驗光人員法規 │                       │ 3. 個人資料保護 │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ (TFDA Compliance)                      │ (Optometry Act) │                       │ (PDPA & Privacy)│</p>
+<p class="text-slate-300 my-3 leading-relaxed">├────────────────┤                       ├────────────────┤                       ├────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 定位消費電子 │                       │ • 線上不提供驗光│                       │ • Pro-Biz無相機 │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 嚴禁宣稱療效 │                       │ • 引導至門市驗光│                       │ • 綠光錄影指示燈│</p>
+└────────────────┘                       └────────────────┘                       └────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3.1 醫療器材宣稱風險防範 (Medical Device Act & TFDA Compliance)</h3>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">法規依據</strong>：依據台灣《醫療器材管理法》第 6 條與第 46 條，非醫療器材不得宣稱醫療效能（如「矯正視力」、「治療近視」、「預防眼疾」、「減緩度數加深」等）。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">現狀評估</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">專案文件將智慧眼鏡主體定位為「消費性電子穿戴裝置」，並將「近視度數鏡片」獨立處理。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">網頁原型 Footer 第 3 條免責聲明已明定：「驗光與配鏡服務由戰略合作夥伴寶島眼鏡特約合格驗光師親自執行」。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">風險與建議</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">行銷文案中提及「照顧你的靈魂之窗」、「舒緩眼睛疲勞」，需注意不得強調「具備眼疾治療或減緩近視發展之醫療效果」。建議統一使用「人因配重無壓迫感」、「抗藍光護眼鏡片選項」等非醫療用語。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3.2 《驗光人員法》合規標註與權責界定 (Optometry Personnel Act)</h3>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">法規依據</strong>：依據台灣《驗光人員法》第 12 條，驗光生/驗光師始得執行非侵入性之眼球屈光狀態檢查（驗光）與配鏡。網路平台不得直接線上驗光販售近視處方鏡片。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">現狀評估</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">商業模式完全合規</strong>：本專案未於線上販售屈光度數鏡片，線上僅販售「智慧眼鏡主體 + 快拆磁吸鏡框」，並發放「門市免費驗光折抵券」，引導消費者至全台 300+ 寶島眼鏡實體門市由合格驗光師進行實體驗光與配鏡。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">建議強化標示</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">建議於網頁原型預約表單 (`#reservation`) 上方增加明確標示：`「本預約服務由合作門市合格驗光師依法提供專業驗光與配鏡適配諮詢」`，確保消費體驗與法規權責完全清澈。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3.3 《個人資料保護法》與隱私錄影提示燈設計 (PDPA & Privacy Protection)</h3>
+
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">法規依據</strong>：依據台灣《個人資料保護法》及《刑法》第 315-1 條（妨害秘密罪），無故以電磁紀錄竊錄他人非公開之活動或言論者處以刑責。科技廠區（如台積電、聯電等半導體廠）對無相機（Camera-less）設備有強制性規範。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">現狀評估</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Vision Pro-Biz</strong>：採用<strong class="text-cyan-300 font-semibold">硬體級完全無相機 (Camera-less)</strong> 設計，從物理上根除鏡頭與偷拍疑慮，100% 滿足半導體廠區、金融高管會議與園區資安規範，市場定位極具眼光。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Vision Active-Go</strong>：配備 <strong class="text-cyan-300 font-semibold">硬體直驅錄影綠色 LED 指示燈</strong>，錄影時電路直接通電亮燈，軟體無法關閉或破譯，符合公共場所隱私提示要求。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">建議強化</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">於配對 App 首次開機畫面加入《隱私保護與合法攝影聲明》條款，提示使用者於公共場所攝影時應尊重他人隱私權。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">四、 發現問題與改進建議清單 (Identified Issues & Action Plan)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">本章節將前述所有稽核發現之缺失，依嚴重程度分類，並給予具體可執行之修改建議。</p>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">4.1 缺失分類與等級判定清單 (Issue Classification)</h3>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>┌─────────────────────────────────────────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│                            稽核缺失等級判定與說明                           │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├──────────┬──────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 致命 (P0)│ 影響畫面呈現、毀損品牌專業度、或存在嚴重法律/公平交易爭議之缺失。│</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 主要 (P1)│ 文案與策略規格不對齊、算術邏輯矛盾、或影響使用者操作體驗之缺陷。 │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 次要 (P2)│ 資訊未盡完整、細節優化建議或可進一步提升 UX 之項目。            │</p>
+└──────────┴──────────────────────────────────────────────────────────────────┘</code></pre>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">缺失編號</th><th class="py-3.5 px-4 border-b border-slate-700/80">分類與模組</th><th class="py-3.5 px-4 border-b border-slate-700/80">缺失描述</th><th class="py-3.5 px-4 border-b border-slate-700/80">影響程度</th><th class="py-3.5 px-4 border-b border-slate-700/80">對應修正建議</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-01</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">原型 (HTML)</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">文字污染</strong>：網頁原型出現 6 處 `/tmp/subagent_run_y8vZM5MP.sh` 污染字串。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P0 (致命)</strong></td><td class="py-3 px-4">全域替換修正為 `0 元` / `0 元起`。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-02</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">原型 (HTML)</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">劃線原價打錯</strong>：集資卡片劃線原價誤標為 `$2,800` 與 `$6,800`。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P0 (致命)</strong></td><td class="py-3 px-4">修正劃線價格為 `12,800` 與 `16,800`。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-03</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">文案/原型</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">折扣算術不符</strong>：宣稱「65折」，但 $11,900/$16,800 為 71 折，$8,900/$12,800 為 70 折。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P1 (主要)</strong></td><td class="py-3 px-4">修改宣稱標語為「<strong class="text-cyan-300 font-semibold">早鳥預購 7 折起</strong>」或將早鳥價調整為真正 65 折 ($10,920 與 $8,320)。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-04</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">規格不一致</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">防水等級遺漏</strong>：`02-strategy.md` 標明 Pro-Biz 為 IP54，但文案與原型均漏標。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P1 (主要)</strong></td><td class="py-3 px-4">在文案與原型的 Pro-Biz 特色中補上 `IP54 生活防水防塵` 認證。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-05</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">規格不一致</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">續航規格遺漏</strong>：策略載明 HUD 14小時/錄影 2.5小時，原型規格表未充分展現。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P2 (次要)</strong></td><td class="py-3 px-4">在原型產品矩陣清單中補充續航時間與充電盒規格。</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-06</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">前端 UX</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">Modal 互動缺失</strong>：預約成功 Modal 缺乏背景點擊關閉與 ESC 鍵關閉處理。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P2 (次要)</strong></td><td class="py-3 px-4">於 JS 中加入遮罩 click 事件監聽器與 `keydown (Escape)` 事件處理。</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">ISSUE-07</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">法規合規</strong></td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">驗光標註強化</strong>：預約試戴表單上方可更明確標示《驗光人員法》合規驗光師聲明。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">P2 (次要)</strong></td><td class="py-3 px-4">於 `#reservation` 表單標題下方增加驗光人員法合規說明警語。</td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">4.2 優先改進行動清單 (Prioritized Action Plan)</h3>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Step 1: 優先修復 P0 致命缺陷 (Developer Agent 立即執行)</h4>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">清理 `04-prototype/index.html` 之腳本路徑污染</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">將所有 `/tmp/subagent_run_y8vZM5MP.sh` 修正為 `0 元` 或 `0 元起`。</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">更正劃線原價打字錯誤</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">Active-Go: `<span class="line-through">12,800</span>`</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">Pro-Biz: `<span class="line-through">16,800</span>`</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Step 2: 修正 P1 主要一致性缺失 (Copywriter & Developer Agent 協同)</h4>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">統一折扣宣稱用語</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">建議將 `03-copywriting.md` 與 `04-prototype/index.html` 中的「65折」統一更正為「<strong class="text-cyan-300 font-semibold">早鳥限量 7 折起</strong>」（11,900 / 16,800 = 70.8%），以符真實價格與消費者保護法規範。</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">補齊 Pro-Biz IP54 防水規格</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">在 `03-copywriting.md` 與 `index.html` 的 Vision Pro-Biz 特色卡片中新增「IP54 生活防水防塵」。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Step 3: 優化 P2 次要體驗與法規防線 (Reviewer Agent 整合前對齊)</h4>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">強化 JavaScript Modal 體驗</strong>：</p>
+<p class="text-slate-300 my-3 leading-relaxed">```javascript</p>
+<p class="text-slate-300 my-3 leading-relaxed">// 建議新增於 index.html 腳本中</p>
+<p class="text-slate-300 my-3 leading-relaxed">document.getElementById('booking-modal').addEventListener('click', (e) => {</p>
+<p class="text-slate-300 my-3 leading-relaxed">if (e.target.id === 'booking-modal') closeModal();</p>
+<p class="text-slate-300 my-3 leading-relaxed">});</p>
+<p class="text-slate-300 my-3 leading-relaxed">document.addEventListener('keydown', (e) => {</p>
+<p class="text-slate-300 my-3 leading-relaxed">if (e.key === 'Escape') closeModal();</p>
+<p class="text-slate-300 my-3 leading-relaxed">});</p>
+<p class="text-slate-300 my-3 leading-relaxed">```</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">完整法規免責警語備查</strong>：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">確保 `06-final-review.md` 專案整合報告收錄本次 QA 檢查點，並將完成修復之成果列入專案落地前最後查核清單。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+<em class="text-slate-300 italic">報告產出 Agent：QA Agent (Multi-Agent Team Framework)</em>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
+            sidebar.classList.toggle('z-50');
+            sidebar.classList.toggle('w-full');
+        });
+    </script>
+</body>
+</html>

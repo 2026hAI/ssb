@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全案整合報告 | VisionAI 台灣智慧眼鏡專案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans TC', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00F2FE',
+                            neon: '#10B981',
+                            darkBg: '#080C14',
+                            cardBg: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; background-color: #080C14; color: #E2E8F0; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-[#080C14] text-slate-200 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Mobile Header -->
+    <header class="lg:hidden sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-sm">V</div>
+            <span class="font-bold text-white text-base tracking-wide">VisionAI Portal</span>
+        </div>
+        <button id="mobile-toggle" class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900 border border-slate-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <div class="flex-1 flex max-w-[1600px] w-full mx-auto">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-72 bg-[#0C1220] border-r border-slate-800/80 p-5 shrink-0 sticky top-0 h-screen overflow-y-auto">
+            <div class="flex items-center gap-3 px-2 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20">V</div>
+                <div>
+                    <h1 class="font-black text-white text-lg tracking-wider">VisionAI</h1>
+                    <p class="text-[11px] text-cyan-400/90 font-medium tracking-wide uppercase">Taiwan Smart Glasses</p>
+                </div>
+            </div>
+
+            <div class="text-xs font-semibold uppercase text-slate-500 tracking-wider px-3 mb-3">專案導覽入口</div>
+            
+            <nav class="space-y-1.5 flex-1">
+                
+            <a href="index.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">🏠 專案主入口</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Dashboard</span>
+            </a>
+        
+
+            <a href="01-research.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">01. 市場研究報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Research</span>
+            </a>
+        
+
+            <a href="02-strategy.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">02. 策略定位文件</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Strategy</span>
+            </a>
+        
+
+            <a href="03-copywriting.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">03. 品牌行銷文案</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Copywriting</span>
+            </a>
+        
+
+            <a href="04-prototype.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">04. 網頁原型展示</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Prototype</span>
+            </a>
+        
+
+            <a href="05-qa-report.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">05. QA 稽核報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">QA Report</span>
+            </a>
+        
+
+            <a href="06-final-review.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group bg-cyan-500/20 text-cyan-300 border-r-4 border-cyan-400 font-semibold shadow-lg shadow-cyan-500/10">
+                <span class="flex items-center gap-2.5 text-sm">06. 全案整合報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Final Review</span>
+            </a>
+        
+            </nav>
+
+            <div class="mt-8 pt-4 border-t border-slate-800/80 px-2 text-xs text-slate-500 flex flex-col gap-1">
+                <p class="font-medium text-slate-400">Multi-Agent Team Framework</p>
+                <p>© 2026 VisionAI Project</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 sm:p-8 lg:p-12 overflow-y-auto max-w-5xl mx-auto w-full">
+            <div class="bg-[#0F172A]/70 backdrop-blur-md rounded-2xl border border-slate-800/80 p-6 sm:p-10 shadow-2xl shadow-black/50">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 mt-6 mb-6 pb-3 border-b border-slate-800 flex items-center gap-3">VisionAI 智慧眼鏡專案：全案整合報告 (06-final-review.md)</h1>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">專案基本資訊</h2>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">專案名稱</strong>：台灣智慧眼鏡專案 (Taiwan Smart Glasses Project)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">品牌名稱</strong>：VisionAI 智慧眼鏡</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">主撰角色</strong>：Reviewer Agent (Multi-Agent Team Framework)</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">整合產出文件</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. `01-research.md` (市場研究報告 — Research Agent)</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. `02-strategy.md` (策略定位文件 — Strategy Agent)</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. `03-copywriting.md` (行銷文案 — Copywriter Agent)</p>
+<p class="text-slate-300 my-3 leading-relaxed">4. `04-prototype/index.html` (網頁原型 — Developer Agent)</p>
+<p class="text-slate-300 my-3 leading-relaxed">5. `05-qa-report.md` (QA 檢查與合規報告 — QA Agent)</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">報告生效日期</strong>：2026 年 8 月</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">一、 專案總體執行摘要 (Project Executive Summary)</h2>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. 全案目標 (Project Objective)</h3>
+<p class="text-slate-300 my-3 leading-relaxed">抓住生成式 AI（Generative AI）、多模態 LLM（Multimodal LLM）與微型光學顯示（Micro-LED 綠光波導）技術突破之黃金轉折點，引領台灣 2,300 萬廣大使用者由長時間低頭的「低頭族」轉型為解放雙手的「抬頭族」。本專案旨在打造專為繁體中文世界設計、最懂台灣語言與生活場域的次世代 AI 抬頭穿戴裝置「<strong class="text-cyan-300 font-semibold">VisionAI 智慧眼鏡</strong>」，目標於上市首年取得台灣消費級與商務智慧眼鏡市場市佔率第一。</p>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. 核心定位 (Core Positioning)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">定位聲明</strong>：「<strong class="text-cyan-300 font-semibold">抬頭無感，看見即理解 — 專為繁體中文世界打造的次世代 AI 智慧眼鏡</strong>」。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">三大核心護城河</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. <strong class="text-cyan-300 font-semibold">微波導無感輕量</strong>：採用單眼綠光 Micro-LED 衍射光波導技術，機身重量僅 49g / 58g，實現半透明懸浮 HUD 提詞與雙向字幕顯示，室外 1,000 nits 高亮度清晰可見。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. <strong class="text-cyan-300 font-semibold">Taiwan-LLM 繁中在地語音適配</strong>：深度整合在地化 LLM 模型與台灣口音/用語辨識，提供零時差跨國會議雙向字幕翻譯、演講懸浮提詞、語音速記與 AI 隨身助理。</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. <strong class="text-cyan-300 font-semibold">寶島眼鏡 300+ 門市一站式驗光快配</strong>：獨家結盟全台最大連鎖眼鏡通路，提供 30 分鐘專業驗光、屈光鏡片客製與售後鏡架微調服務，徹底打破科技產品缺乏實體驗光通路的致命痛點。</p>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3. 雙線產品矩陣 (Dual-Product Matrix)</h3>
+<p class="text-slate-300 my-3 leading-relaxed">針對不同場域精準切割產品線，解決企業資安保密與戶外影音記錄不可兼得的矛盾：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Vision Pro-Biz (商務無相機 HUD 抬頭顯示版)</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">核心特色</strong>：<strong class="text-cyan-300 font-semibold">無鏡頭設計</strong>（100% 規避企業資安與保密場域風險），單眼綠光 Micro-LED 顯示，主打即時雙向翻譯字幕、演講提詞、行事曆提醒與高階商務談判。機身僅重 <strong class="text-cyan-300 font-semibold">49g</strong>，HUD 模式續航高達 <strong class="text-cyan-300 font-semibold">14 小時</strong>，具備 <strong class="text-cyan-300 font-semibold">IP54</strong> 生活防水防塵。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價格與資費</strong>：建議售價 NT$ 16,800，早鳥優惠價 NT$ 11,900（7 折），搭配電信 5G 1399 綁約專案價 NT$ 0。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">Vision Active-Go (戶外影音第一人稱拍攝版)</strong>：</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">核心特色</strong>：配備 <strong class="text-cyan-300 font-semibold">12MP 超廣角相機</strong> 與防篡改實體錄影 LED 提示燈，開放式環繞音訊，EIS 電子防手震，支援 1080p 第一人稱視角直播與社群記錄。機身重 <strong class="text-cyan-300 font-semibold">58g</strong>，續航支援 <strong class="text-cyan-300 font-semibold">2.5 小時</strong> 連續錄影或 <strong class="text-cyan-300 font-semibold">8 小時</strong> 音訊播放，具備 <strong class="text-cyan-300 font-semibold">IP54</strong> 防水防塵。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價格與資費</strong>：建議售價 NT$ 12,800，早鳥優惠價 NT$ 8,900（7 折），搭配電信 5G 999 綁約專案價 NT$ 0。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">4. 商業模式概要 (Business Model)</h3>
+<p class="text-slate-300 my-3 leading-relaxed">採用「<strong class="text-cyan-300 font-semibold">硬體銷售 + SaaS AI 服務訂閱</strong>」雙軌收入引擎：</p>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">一次性硬體銷售</strong>：透過嘖嘖集資、寶島眼鏡 300+ 實體門市、電信資費補貼（中華電信、台灣大哥大、遠傳電信）與 B2B 企業專案進行硬體開賣。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">SaaS 訂閱收入 ("VisionAI Premium")</strong>：月繳 NT$ 290 / 年繳 NT$ 2,900（購機即贈送首年免費）。訂閱功能包含：無限量 AI 雙向字幕翻譯分鐘數、高階會議逐字稿與摘要生成、雲端影音無縫備份與 AI 風噪消除演算法。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">二、 各階段產出摘要與鏈接 (Phase Deliverables Summary)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">本專案由 CEO Agent 主導，依序調度 Research、Strategy、Copywriter、Developer 與 QA 六個專業 Agent，完成價值鏈之遞進演進：</p>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│                               專案價值鏈演進與文件鏈接 (Value Chain)                     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┬───────────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase 2 (Research)│ 01-research.md：釐清台灣市場爆發趨勢、法規防線(TFDA/驗光法/PDPA)與競品缺口│</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┼───────────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase 3 (Strategy)│ 02-strategy.md：確立品牌定位、三大UVP、雙線產品矩陣與三階段GTM資費藍圖    │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┼───────────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase 4 (Copy)  │ 03-copywriting.md：轉化策略為高轉化率行銷文案、Hero Section 與痛點對比表│</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┼───────────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase 5 (Dev)   │ 04-prototype/index.html：建構 RWD 響應式網頁原型與門市預約互動 Modal   │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├─────────────────┼───────────────────────────────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase 6 (QA)    │ 05-qa-report.md：執行代碼/文案/法規審查，抓出 P0/P1 缺陷並給予修復指南  │</p>
+└─────────────────┴───────────────────────────────────────────────────────────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">1. Phase 2: Research Agent — `01-research.md` (市場研究報告)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">重點內容</strong>：研判台灣智慧眼鏡正迎來從「重型 XR」走向「日常輕量穿戴」的關鍵轉折點。分析 Camera+Audio、HUD 與 Pocket XR 三大形態；深入剖析食藥署醫療器材法規（TFDA）、《驗光人員法》、個資法（PDPA）與 NCC/BSMI 認證限制；指出 Meta 等國際競品在繁體中文在地化與驗光通路的缺口。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價值鏈貢獻</strong>：確定「無鏡頭商務版」與「寶島眼鏡通路結盟」為兩大戰略突破口，為全案提供扎實的市場事實與法規防線。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">2. Phase 3: Strategy Agent — `02-strategy.md` (策略定位文件)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">重點內容</strong>：將市場調研轉化為商業與產品藍圖。定義品牌定位「VisionAI」、三大 UVP、雙線產品矩陣（Vision Pro-Biz / Vision Active-Go）、TA Persona（商務高管 Alex 與戶外創作者 Mark）、硬體軟體規格矩陣，以及「嘖嘖集資 -> 寶島眼鏡門市 -> 三大電信綁約」之三階段 GTM 進入策略。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價值鏈貢獻</strong>：確立硬體定價（MSRP / 早鳥價）、資費補貼模型與「VisionAI Premium」SaaS 訂閱制雙軌商業模式。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">3. Phase 4: Copywriter Agent — `03-copywriting.md` (行銷文案)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">重點內容</strong>：將策略語言轉化為具吸引力之 C 端與 B 端行銷文案。包含 Hero Section（「抬頭，看見 AI 賦能的全新視野」）、4 大 UVP 深度文案、雙線產品特色、Before vs. After 真實痛點對比表、資費試算與早鳥 Call to Action。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價值鏈貢獻</strong>：奠定品牌視覺風格與溝通腳本，為前端網頁開發提供結構清晰的 Landing Page 內容骨架。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">4. Phase 5: Developer Agent — `04-prototype/index.html` (網頁原型)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">重點內容</strong>：使用 HTML5、Tailwind CSS 與 Vanilla JS 建構 RWD 響應式 Landing Page 原型。實作微波導顯示綠光特效、雙線產品展示卡片、Before/After 對比區塊、門市預約表單 Modal 與常發問答 FAQ。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價值鏈貢獻</strong>：將抽象文案與策略轉化為可互動、可測試、具視覺衝擊力的數位產品門面。</span></li>
+</ul>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">5. Phase 6: QA Agent — `05-qa-report.md` (QA 檢查與合規報告)</h3>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">重點內容</strong>：對 01~04 產出進行策略一致性、代碼品質與法規合規審查。查出 2 項 P0 致命缺陷（HTML 腳本污染、劃線原價打錯）、2 項 P1 主要缺失（65 折折扣算術矛盾修正為 7 折起、補齊 IP54 規格）、3 項 P2 次要優化（Modal 體驗、續航與驗光法規警語）。完成 TFDA、驗光人員法、PDPA 個資法合規審查。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">價值鏈貢獻</strong>：把關專案品質、法律風險與轉化率瓶頸，並提供具體修復清單供上市前驗收對齊。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">三、 SWOT 優劣勢與機會威脅分析 (SWOT Analysis)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">針對「VisionAI 智慧眼鏡專案」落地台灣市場，進行 SWOT 交叉矩陣分析：</p>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+<p class="text-slate-300 my-3 leading-relaxed">│                               VisionAI 智慧眼鏡 SWOT 交叉矩陣                           │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├───────────────────────────────────────────┬─────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 內部優勢 (Strengths)                      │ 內部劣勢 (Weaknesses)                       │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 1. 寶島眼鏡 300+ 門市實體通路獨家結盟     │ 1. 新創品牌認知度與信任度尚待累積           │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 2. 商務無相機版 (Pro-Biz) 完美切入保密場域│ 2. 雙線產品研發與庫存備貨資金壓力較高       │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 3. 專屬繁體中文在地 LLM 與台灣口音適配    │ 3. 戶外影音版續航力受限於 58g 重量限制      │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 4. 49g 極致輕量與 Monocular Micro-LED 顯示│ 4. 開放式音訊於極高噪音環境下受干擾         │</p>
+<p class="text-slate-300 my-3 leading-relaxed">├───────────────────────────────────────────┼─────────────────────────────────────────────┤</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 外部機會 (Opportunities)                  │ 外部威脅 (Threats)                          │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 1. 台灣廣大「低頭族」轉「抬頭族」趨勢      │ 1. 國際巨頭 (如 Meta / Apple) 推出低價新機  │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 2. 經濟部 SBIR / 數位部 AI 補助資源挹注   │ 2. 偷拍與隱私疑慮引發大眾或特定場域抵制     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 3. 三大電信業者 5G 高資費綁約補貼需求     │ 3. 全球微型光學顯示與光波導晶片產能緊缺     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ 4. 企業 B2B 跨國會議與現場巡檢剛性需求    │ 4. 消基會或公平會對「早鳥折扣標示」嚴格查核 │</p>
+└───────────────────────────────────────────┴─────────────────────────────────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">SWOT 交叉戰略 (SO, ST, WO, WT Strategies)</h3>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">1. SO 戰略 (槓桿優勢，搶占機會)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">實體通路 + 電信補貼速攻</strong>：利用「寶島眼鏡 300+ 門市」與「三大電信 5G 綁約 $0 方案」，在國際巨頭（如 Meta）尚未完成台灣在地化驗光對接前，迅速佔領台灣消費級與商務市場。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">申請政府 AI 補助專案</strong>：結合經濟部 SBIR 與數位部 DIGITAL+ 專案，爭取本土 LLM 語音研發補助，強化「最懂台灣用語」的技術壁壘。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">2. ST 戰略 (避開威脅，發揮優勢)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">無相機版規避隱私與偷拍威脅</strong>：主推無鏡頭的 Vision Pro-Biz 版，直接進入半導體廠區、金融高管會議與政府機構等禁止相機的極度保密場域，避開大眾對拍攝型眼鏡的隱私抵制。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">供應鏈多元化備援</strong>：針對 Micro-LED 光波導晶片緊缺威脅，與多家台美光學晶片供應商簽署複數供應協議，確保核心料件穩定。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">3. WO 戰略 (克服劣勢，迎向機會)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">群眾集資建立品牌口碑</strong>：透過「嘖嘖集資」累積首批 3,000 位種子用戶的體驗口碑與媒體開箱，克服新品牌認知度不足之劣勢，並運用預售資金緩解備貨壓力。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">模組化隨身配件提升續航</strong>：針對 58g 輕量化導致續航受限問題，推出專屬磁吸式鏡腿快充盒（可額外提供 3 次滿充），解決戶外玩家續航焦慮。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">4. WT 戰略 (防禦減害，消除風險)</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">嚴格落實法規與折價標示合規</strong>：徹底修復 QA 稽核指出之折扣宣稱問題（統一標示「早鳥預購 7 折起」），並於產品明確標註非醫療器材免責聲明，杜絕公平會與消基會裁罰風險。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">實體門市體驗化解信任危機</strong>：提供寶島眼鏡 30 分鐘現場免費體驗與一對一專業驗光，以實體服務體驗抵抗國際大廠的純價格戰。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">四、 專案落地前關鍵風險與驗證計畫 (Key Risks & Validation Checklist)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">為確保「VisionAI 智慧眼鏡專案」順利上線，針對四大關鍵面向建立風險控制與驗證查核清單（Validation Checklist）：</p>
+
+<div class="overflow-x-auto my-6 border border-slate-800 rounded-xl shadow-lg shadow-black/20"><table class="w-full text-left border-collapse min-w-full"><thead class="bg-slate-800/80 text-cyan-300 font-semibold text-sm"><tr><th class="py-3.5 px-4 border-b border-slate-700/80">風險面向</th><th class="py-3.5 px-4 border-b border-slate-700/80">關鍵風險描述</th><th class="py-3.5 px-4 border-b border-slate-700/80">影響等級</th><th class="py-3.5 px-4 border-b border-slate-700/80">具體控制措施與驗證查核清單 (Validation Checklist)</th><th class="py-3.5 px-4 border-b border-slate-700/80">負責單位與對齊時程</th></tr></thead><tbody class="divide-y divide-slate-800/60 text-slate-300 text-sm"><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">1. 驗光通路合作</strong></td><td class="py-3 px-4">寶島眼鏡門市驗光人員對智慧眼鏡框架拆裝與客製屈光鏡片不熟悉，導致驗光體驗耗時過長或損壞設備。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">High</strong></td><td class="py-3 px-4">- [ ] 完成 300+ 門市 SOP 驗光手冊與鏡片快速扣合結構實體培訓。<br>- [ ] 於台北、台中、高雄 10 家旗艦店完成 Pilot 先導測試，目標單人服務 30 分鐘內完成。<br>- [ ] 簽署專屬通路合作合約，明確界定《驗光人員法》法定責任與鏡片售後保固責任。</td><td class="py-3 px-4">通路營運部 / 寶島眼鏡 (Launch - 30 天)</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">2. 供應鏈拉貨與產能</strong></td><td class="py-3 px-4">光波導模組與 Micro-LED 顯示晶片良率波動，導致嘖嘖集資出貨延遲或供貨不足。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">High</strong></td><td class="py-3 px-4">- [ ] 鎖定第 1 批次 3,000 台核心零組件備料（光波導晶片、12MP 鏡頭模組）。<br>- [ ] 與代工廠完成 SMT 裝配與 IP54 防水組裝測試（產線合格率需 > 98%）。<br>- [ ] 建立 AB 雙供應商備援機制，設定 30 天安全庫存水準。</td><td class="py-3 px-4">供應鏈管理部 (Launch - 45 天)</td></tr><tr class="bg-slate-900/40 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">3. 資安與個資法審查</strong></td><td class="py-3 px-4">(1) 無相機版遭質疑保密不徹底；(2) 拍攝版錄影提示燈遭遮擋；(3) 語音雲端資料違反個資法（PDPA）；(4) 醫療器材宣稱違規。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">Critical</strong></td><td class="py-3 px-4">- [ ] <strong class="text-cyan-300 font-semibold">TFDA 合規</strong>：於官網、盒裝與文案全面標註「非醫療器材」免責聲明。<br>- [ ] <strong class="text-cyan-300 font-semibold">PDPA 個資法</strong>：語音傳輸採 end-to-end 加密，雲端 Server 設於台灣，預設關閉錄音留存。<br>- [ ] <strong class="text-cyan-300 font-semibold">硬體防篡改</strong>：Active-Go 錄影 LED 與鏡頭電路連動，遮擋即自動切斷電源停止錄影。<br>- [ ] <strong class="text-cyan-300 font-semibold">NCC / BSMI 認證</strong>：取得射頻與低電壓安規合格證書。</td><td class="py-3 px-4">法務與合規部 / QA Agent (Launch - 20 天)</td></tr><tr class="bg-slate-900/80 hover:bg-slate-800/50 transition-colors"><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">4. 電信方案綁約</strong></td><td class="py-3 px-4">電信業者 POS 系統對接延遲、5G 專案補貼款項撥付週期過長，或門市銷售推廣意願不高。</td><td class="py-3 px-4"><strong class="text-cyan-300 font-semibold">Medium</strong></td><td class="py-3 px-4">- [ ] 完成中華電信、台灣大哥大、遠傳電信綁約合約簽署（5G $999/$1399 專案價 $0）。<br>- [ ] 完成電信門市銷售員獎勵方案 (KPI Commission) 與實體展示架 (PoP) 入店。<br>- [ ] 電信 eSIM / 藍芽連線 App 跨平台測試（iOS / Android 相容性驗證）。</td><td class="py-3 px-4">電信業務部 (Launch - 15 天)</td></tr></tbody></table></div>
+<hr class="border-slate-800 my-8">
+
+<h2 class="text-xl sm:text-2xl font-bold text-cyan-300 mt-8 mb-4 pb-2 border-b border-slate-800/80 flex items-center gap-2">五、 下一步行動與落地時程建議 (Roadmap & Next Steps)</h2>
+
+<p class="text-slate-300 my-3 leading-relaxed">本專案上線前與上線後之明確 Milestone 與執行甘特圖規劃：</p>
+
+<pre class="bg-slate-900/90 text-emerald-400 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono"><code>2026 年 8 月                 9 月                     10 月                  11 月~12 月
+<p class="text-slate-300 my-3 leading-relaxed">┌─────────────────────────┬─────────────────────────┬──────────────────────┬─────────────────────────┐</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ Phase A: 前置修復與認證 │ Phase B: 嘖嘖集資預售   │ Phase C: 通路與電信  │ Phase D: 全面現貨上市   │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 修復 05-qa 缺陷       │ • 嘖嘖正式上線 (目標10M) │ • 寶島眼鏡門市進櫃   │ • 300+ 門市現場配鏡     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 完成 NCC/BSMI 認證    │ • 媒體與 KOL 開箱體驗   │ • 三大電信 5G 綁約開賣│ • SaaS 訂閱續訂轉化     │</p>
+<p class="text-slate-300 my-3 leading-relaxed">│ • 寶島門市人員培訓      │ • 10 家門市試戴體驗     │ • 集資首批 3000 台出貨│ • B2B 企業專案推廣      │</p>
+└─────────────────────────┴─────────────────────────┴──────────────────────┴─────────────────────────┘</code></pre>
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">5.1 上線前關鍵里程碑 (Pre-Launch Milestones - M1 ~ M4)</h3>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 1 (M1) — 前端代碼與文案缺陷完全修復 [2026/08/15 前]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">執行單位</strong>：Developer Agent & Copywriter Agent</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">具體工作內容</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. 清理 `04-prototype/index.html` 內 6 處 `/tmp/subagent_run_y8vZM5MP.sh` 文字污染，替換為 `0 元` / `0 元起`。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. 修正劃線原價打字錯誤，更正為 `<span class="line-through">12,800</span>` 與 `<span class="line-through">16,800</span>`。</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. 統一文案與頁面宣告為「<strong class="text-cyan-300 font-semibold">早鳥預購 7 折起</strong>」，消除折扣算術邏輯矛盾。</p>
+<p class="text-slate-300 my-3 leading-relaxed">4. 於 Pro-Biz 特色中補齊 `IP54 生活防水防塵` 認證標記，並優化預約 Modal 之外圍點擊與 `ESC` 鍵關閉體驗。</p>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 2 (M2) — 安規認證與資安合規備查 [2026/08/30 前]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">執行單位</strong>：法務與合規部</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">具體工作內容</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. 取得 NCC 射頻執照與 BSMI 安全認證號碼，印製於產品盒裝與說明書。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. 完成台灣本地 GCP/AWS 伺服器部署，確保語音與 AI 數據傳輸符合《個人資料保護法》。</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. 提交食藥署（TFDA）非醫療器材備查，並於所有廣宣載明「本產品非醫療器材」警語。</p>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 3 (M3) — 嘖嘖集資專案上線與 KOL 開箱 [2026/09/01 ~ 2026/10/15]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">執行單位</strong>：行銷與公關團隊</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">具體工作內容</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. 嘖嘖集資專案正式上線，目標預售金額突破 <strong class="text-cyan-300 font-semibold">NT$ 1,000 萬元</strong>。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. 邀請 20 位 3C 科技達人、單車/戶外 KOL 及商務 Podcast 主持人進行實機開箱與第一人稱影片評測。</p>
+<p class="text-slate-300 my-3 leading-relaxed">3. 舉辦 3 場「VisionAI 抬頭體驗沙龍」，邀請早鳥贊助者親自體驗雙向字幕翻譯與提詞功能。</p>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 4 (M4) — 通路實體鋪貨與門市培訓 [2026/09/20 前]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">執行單位</strong>：通路營運部</span></li>
+<li class="leading-relaxed"><span class="text-slate-200"><strong class="text-cyan-300 font-semibold">具體工作內容</strong>：</span></li>
+</ul>
+<p class="text-slate-300 my-3 leading-relaxed">1. 完成寶島眼鏡全台 10 家示範門市專用體驗櫃位（PoP）鋪設與展示機進駐。</p>
+<p class="text-slate-300 my-3 leading-relaxed">2. 辦理 5 場寶島門市驗光師「VisionAI 鏡架拆裝與客製鏡片配載」實務工作坊。</p>
+
+<hr class="border-slate-800 my-8">
+
+<h3 class="text-lg sm:text-xl font-semibold text-emerald-400 mt-6 mb-3 flex items-center gap-2">5.2 上線後營運與擴展計畫 (Post-Launch Operations & Extension)</h3>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 5 (M5) — 集資交貨與寶島眼鏡全台開賣 [2026/10/16]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">交付嘖嘖集資首批 3,000 位贊助者，確保 14 天內配送完畢。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">寶島眼鏡全台 300+ 門市正式現貨開賣，啟動 30 分鐘一站式驗光快配。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 6 (M6) — 三大電信 5G 綁約方案全面啟動 [2026/11/01]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">中華電信、台灣大哥大、遠傳電信全台門市同步上架，主打 5G $999/$1399 專案價 $0 入手。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">配合電信門市電視牆與線上廣告進行全台大波段宣傳。</span></li>
+</ul>
+
+<h4 class="text-base font-medium text-slate-200 mt-4 mb-2">Milestone 7 (M7) — SaaS 訂閱營運與 B2B 企業拓展 [2026/12/01 起]</h4>
+<ul class="list-disc list-inside space-y-2 text-slate-300 my-4 pl-2">
+<li class="leading-relaxed"><span class="text-slate-200">引導購機用戶綁定「VisionAI Premium」SaaS 服務，目標首年免費到期後續訂率突破 <strong class="text-cyan-300 font-semibold">40%</strong>。</span></li>
+<li class="leading-relaxed"><span class="text-slate-200">啟動 B2B 企業專案（如半導體廠區巡檢專案、跨國法律/金融團隊量購），拓展長尾高毛利營收。</span></li>
+</ul>
+
+<hr class="border-slate-800 my-8">
+
+<em class="text-slate-300 italic">報告完成日期：2026 年 8 月</em>  
+<em class="text-slate-300 italic">報告撰寫 Agent：Reviewer Agent (Multi-Agent Team Framework)</em>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
+            sidebar.classList.toggle('z-50');
+            sidebar.classList.toggle('w-full');
+        });
+    </script>
+</body>
+</html>

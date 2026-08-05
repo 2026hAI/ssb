@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專案全案整合入口 | VisionAI 台灣智慧眼鏡專案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans TC', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00F2FE',
+                            neon: '#10B981',
+                            darkBg: '#080C14',
+                            cardBg: '#0F172A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif; background-color: #080C14; color: #E2E8F0; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #080C14; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-[#080C14] text-slate-200 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Mobile Header -->
+    <header class="lg:hidden sticky top-0 z-50 bg-[#080C14]/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-sm">V</div>
+            <span class="font-bold text-white text-base tracking-wide">VisionAI Portal</span>
+        </div>
+        <button id="mobile-toggle" class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900 border border-slate-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </header>
+
+    <div class="flex-1 flex max-w-[1600px] w-full mx-auto">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="hidden lg:flex flex-col w-72 bg-[#0C1220] border-r border-slate-800/80 p-5 shrink-0 sticky top-0 h-screen overflow-y-auto">
+            <div class="flex items-center gap-3 px-2 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-cyan-500/20">V</div>
+                <div>
+                    <h1 class="font-black text-white text-lg tracking-wider">VisionAI</h1>
+                    <p class="text-[11px] text-cyan-400/90 font-medium tracking-wide uppercase">Taiwan Smart Glasses</p>
+                </div>
+            </div>
+
+            <div class="text-xs font-semibold uppercase text-slate-500 tracking-wider px-3 mb-3">專案導覽入口</div>
+            
+            <nav class="space-y-1.5 flex-1">
+                
+            <a href="index.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group bg-cyan-500/20 text-cyan-300 border-r-4 border-cyan-400 font-semibold shadow-lg shadow-cyan-500/10">
+                <span class="flex items-center gap-2.5 text-sm">🏠 專案主入口</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Dashboard</span>
+            </a>
+        
+
+            <a href="01-research.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">01. 市場研究報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Research</span>
+            </a>
+        
+
+            <a href="02-strategy.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">02. 策略定位文件</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Strategy</span>
+            </a>
+        
+
+            <a href="03-copywriting.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">03. 品牌行銷文案</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Copywriting</span>
+            </a>
+        
+
+            <a href="04-prototype.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">04. 網頁原型展示</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Prototype</span>
+            </a>
+        
+
+            <a href="05-qa-report.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">05. QA 稽核報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">QA Report</span>
+            </a>
+        
+
+            <a href="06-final-review.html" class="flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 group text-slate-400 hover:bg-slate-800/60 hover:text-slate-200">
+                <span class="flex items-center gap-2.5 text-sm">06. 全案整合報告</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 group-hover:bg-slate-700 transition-colors">Final Review</span>
+            </a>
+        
+            </nav>
+
+            <div class="mt-8 pt-4 border-t border-slate-800/80 px-2 text-xs text-slate-500 flex flex-col gap-1">
+                <p class="font-medium text-slate-400">Multi-Agent Team Framework</p>
+                <p>© 2026 VisionAI Project</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 sm:p-8 lg:p-12 overflow-y-auto max-w-5xl mx-auto w-full">
+            <div class="bg-[#0F172A]/70 backdrop-blur-md rounded-2xl border border-slate-800/80 p-6 sm:p-10 shadow-2xl shadow-black/50">
+                
+<div class="space-y-10">
+    <!-- Hero Portal Header -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/50 to-slate-900 border border-slate-800 p-8 sm:p-12">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Multi-Agent Orchestration Framework
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                台灣智慧眼鏡專案 <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">專案全案整合入口 Portal</span>
+            </h1>
+            <p class="text-slate-300 max-w-2xl text-base sm:text-lg leading-relaxed">
+                由 CEO Agent 主導，調度 Research、Strategy、Copywriter、Developer、QA 與 Reviewer 六個專業 Agent 協同打造，包含完整調研、策略、文案、原型與稽核之完整產出。
+            </p>
+        </div>
+    </div>
+
+    <!-- Quick Stats Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-1">
+            <p class="text-slate-400 text-xs font-medium">核心品牌名稱</p>
+            <p class="text-xl font-bold text-cyan-300">VisionAI 智慧眼鏡</p>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-1">
+            <p class="text-slate-400 text-xs font-medium">雙線產品矩陣</p>
+            <p class="text-xl font-bold text-emerald-400">Pro-Biz / Active-Go</p>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-1">
+            <p class="text-slate-400 text-xs font-medium">關鍵通路聯盟</p>
+            <p class="text-xl font-bold text-cyan-300">寶島眼鏡 300+ 門市</p>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-1">
+            <p class="text-slate-400 text-xs font-medium">產出文件總數</p>
+            <p class="text-xl font-bold text-emerald-400">6 份完整 HTML 模組</p>
+        </div>
+    </div>
+
+    <!-- Modules Navigation Grid -->
+    <div class="space-y-4">
+        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span class="text-cyan-400">❖</span> 專案文件與原型模組入口
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card 01 -->
+            <a href="01-research.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Phase 2</span>
+                        <span class="text-slate-500 text-xs group-hover:text-cyan-400 transition-colors">點擊閱讀 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">01. 市場研究報告</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        深入調研台灣智慧眼鏡市場現況、三大產品形態、衛福部食藥署（TFDA）醫療器材法規與《驗光人員法》限制。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                    Research Agent
+                </div>
+            </a>
+
+            <!-- Card 02 -->
+            <a href="02-strategy.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Phase 3</span>
+                        <span class="text-slate-500 text-xs group-hover:text-cyan-400 transition-colors">點擊閱讀 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">02. 策略定位文件</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        確立 VisionAI 品牌定位「抬頭無感看見即理解」、四大 UVP 賣點、雙線產品矩陣規格與寶島眼鏡一站式快配。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                    Strategy Agent
+                </div>
+            </a>
+
+            <!-- Card 03 -->
+            <a href="03-copywriting.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Phase 4</span>
+                        <span class="text-slate-500 text-xs group-hover:text-cyan-400 transition-colors">點擊閱讀 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">03. 品牌行銷文案</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        轉化策略為 C 端高轉化率 Landing Page 行銷文案、Hero 主副標題、痛點 Before/After 對比與資費方案。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                    Copywriter Agent
+                </div>
+            </a>
+
+            <!-- Card 04 -->
+            <a href="04-prototype.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4 ring-1 ring-emerald-500/20">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">Phase 5 (Prototype)</span>
+                        <span class="text-emerald-400 text-xs font-bold group-hover:underline">線上預覽 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">04. 網頁原型展示</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        單頁響應式 RWD Landing Page 原型，內建微波導懸浮視角切換器、產品矩陣 Tab 與寶島門市預約 Modal。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-emerald-400/90 font-medium">
+                    Developer Agent
+                </div>
+            </a>
+
+            <!-- Card 05 -->
+            <a href="05-qa-report.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">Phase 6</span>
+                        <span class="text-slate-500 text-xs group-hover:text-cyan-400 transition-colors">點擊閱讀 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">05. QA 稽核報告</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        針對全案文件進行策略一致性、前端代碼修復（標價與腳本污染清理）與食藥署/驗光法合規性審查。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                    QA Agent
+                </div>
+            </a>
+
+            <!-- Card 06 -->
+            <a href="06-final-review.html" class="group bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-300 shadow-lg flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Phase 7</span>
+                        <span class="text-slate-500 text-xs group-hover:text-cyan-400 transition-colors">點擊閱讀 ↗</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">06. 全案整合報告</h3>
+                    <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+                        整合全案精華、SWOT 交叉分析矩陣、四大風控清單（驗光、供應鏈、資安、電信）與落地時程 Milestone。
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-slate-800/80 text-xs text-slate-500 font-medium">
+                    Reviewer Agent
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+            sidebar.classList.toggle('fixed');
+            sidebar.classList.toggle('inset-0');
+            sidebar.classList.toggle('z-50');
+            sidebar.classList.toggle('w-full');
+        });
+    </script>
+</body>
+</html>
